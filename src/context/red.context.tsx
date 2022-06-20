@@ -18,7 +18,7 @@ type RedContextProps = {
 const RedContext = createContext({} as RedContextData);
 
 const RedProvider: React.FC<RedContextProps> = ({ children }) => {
-  const [redValue, setRedValue] = useState('');
+  const [redValue, setRedValue] = useState('100');
 
   const providerValue = useMemo(
     () => ({

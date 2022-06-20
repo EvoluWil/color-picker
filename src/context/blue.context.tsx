@@ -19,7 +19,7 @@ type BlueContextProps = {
 const BlueContext = createContext({} as BlueContextData);
 
 const BlueProvider: React.FC<BlueContextProps> = ({ children }) => {
-  const [blueValue, setBlueValue] = useState('');
+  const [blueValue, setBlueValue] = useState('100');
 
   const providerValue = useMemo(
     () => ({

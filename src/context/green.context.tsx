@@ -18,7 +18,7 @@ type GreenContextProps = {
 const GreenContext = createContext({} as GreenContextData);
 
 const GreenProvider: React.FC<GreenContextProps> = ({ children }) => {
-  const [greenValue, setGreenValue] = useState('');
+  const [greenValue, setGreenValue] = useState('100');
 
   const providerValue = useMemo(
     () => ({

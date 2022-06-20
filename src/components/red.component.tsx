@@ -1,14 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+import { useRed } from '../context/red.context';
+import { Entrada } from './entrada.component';
 
-export default function App() {
+export const Red = () => {
+  const { redValue, setRedValue } = useRed();
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Entrada value={redValue} setValue={setRedValue} rotulo={'Red'} />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {

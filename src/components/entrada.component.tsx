@@ -1,14 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, TextInput, Text, View } from 'react-native';
 
-export default function App() {
+interface EntradaProps {
+  value: string;
+  setValue: (value: string) => void;
+  rotulo: string;
+}
+
+export const Entrada: React.FC<EntradaProps> = ({
+  value,
+  setValue,
+  rotulo
+}) => {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Text style={styles.rotulo}>{rotulo}</Text>
+      <TextInput style={styles.entrada} value={value} onChangeText={setValue} />
       <StatusBar style="auto" />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {

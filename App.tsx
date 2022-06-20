@@ -1,20 +1,17 @@
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { AppContext } from './src/context/app.context';
+import { Bloco } from './src/components/bloco.component';
+import { Container } from './src/components/container.component';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Bloco />
-      <Bloco />
-    </View>
+    <AppContext>
+      <Container>
+        <Bloco />
+        <Bloco />
+        <StatusBar style="auto" />
+      </Container>
+    </AppContext>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    padding: 20
-  }
-});
